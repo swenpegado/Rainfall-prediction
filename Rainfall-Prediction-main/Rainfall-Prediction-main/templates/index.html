@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Rainfall Prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="temp">Temperature (°C):</label>
+            <input type="number" step="any" name="temp" required><br>
+
+            <label for="temperature_Variation">Temperature_Variation</label>
+            <input type="number" step="any" name="temperature_Variation" required><br>
+
+            <label for="cloud_cover">Cloud Cover (%):</label>
+            <input type="number" step="any" name="cloud_cover" required><br>
+            <label for="wind_speed">Wind_Speed</label>
+            <input type="number" step="any" name="wind_speed" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+        <br>
+        <div>
+            <strong>Prediction Result:</strong> {{ prediction }}
+        </div>
+    </div>
+</body>
+</html>
